@@ -1,2 +1,20 @@
-package Class7;public class ICICIBANKAPIAdapter {
+package Class7;
+
+import Class7.thirdParty.icicibank.IciciBankAPI;
+
+public class ICICIBankAPIAdapter implements BankAPIAdapter{
+    private IciciBankAPI iciciBankAPI=new IciciBankAPI();
+
+    @Override
+    public double getBalance(String accountNumber) {
+        String balance=iciciBankAPI.getBalance(accountNumber);
+        double doubleBalance=Double.parseDouble(balance);
+        return doubleBalance;
+//        return 0;
+    }
+
+    @Override
+    public boolean sendMoney(String fromAccount, String toAccount, double amount) {
+        return false;
+    }
 }

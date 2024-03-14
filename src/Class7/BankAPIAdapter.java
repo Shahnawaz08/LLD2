@@ -1,2 +1,6 @@
-package Class7;public interface BankAPIAdapter {
+package Class7;
+
+public interface BankAPIAdapter {
+    double getBalance(String accountNumber);
+    boolean sendMoney(String fromAccount,String toAccount, double amount);
 }
